@@ -1,9 +1,10 @@
 import { create } from 'zustand';
 
 // URL helper to automatically resolve backend endpoints
-const BACKEND_BASE = 'localhost:8000';
-export const API_URL = `http://${BACKEND_BASE}`;
-export const WS_URL = `ws://${BACKEND_BASE}`;
+const BACKEND_BASE = import.meta.env.VITE_BACKEND_URL;
+
+export const API_URL = `https://${BACKEND_BASE}`;
+export const WS_URL = `wss://${BACKEND_BASE}`;
 
 export interface MCQOption {
   id: string;
